@@ -5,7 +5,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 
-@Mod(modid = McDamsMod.MODID, version = McDamsMod.VERSION)
+@Mod(modid = McDamsMod.MODID, version = McDamsMod.VERSION, name="Dams")
 public class McDamsMod
 {
     public static final String MODID = "mcDams";
@@ -16,5 +16,6 @@ public class McDamsMod
     {
 		// some example code
         System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
+        //
     }
 }
