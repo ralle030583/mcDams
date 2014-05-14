@@ -13,7 +13,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 public class TestValve extends Block{
 
-	protected TestValve() {
+	public TestValve() {
 		super(Material.rock);
 
 		setStepSound(Block.soundTypeStone);
