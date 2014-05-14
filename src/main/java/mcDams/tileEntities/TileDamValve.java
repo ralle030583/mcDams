@@ -64,13 +64,17 @@ public class TileDamValve extends TileEntity {
 	
 	@Override
 	public void readFromNBT(NBTTagCompound p_145839_1_) {
-		// TODO 
+		orientation = ForgeDirection.getOrientation(p_145839_1_.getInteger("orientation"));
+		
+		// TODO registeredDamParts 
 		super.readFromNBT(p_145839_1_);
 	}
-	
+	 
 	@Override
 	public void writeToNBT(NBTTagCompound p_145841_1_) {
-		// TODO 
+		p_145841_1_.setInteger("orientation", this.orientation.ordinal());
+		
+		// TODO registeredDamParts
 		super.writeToNBT(p_145841_1_);
 	}
 
