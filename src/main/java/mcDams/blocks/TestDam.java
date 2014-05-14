@@ -72,9 +72,10 @@ public class TestDam extends Block {
 	@Override
 	public void getSubBlocks(Item par1, CreativeTabs par2CreativeTabs,
 			List par3List) {
-		for (int i = 0; i < 2; i++) {
-			par3List.add(new ItemStack(par1, 1, i));
-		}
+		//for (int i = 0; i < 2; i++) {
+		//	par3List.add(new ItemStack(par1, 1, i));
+		//}
+		return;
 	}
 
 }
