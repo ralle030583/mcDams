@@ -1,6 +1,6 @@
 [
 {
-  "modid": "dams",
+  "modid": "mcDams",
   "name": "The Dams Mod",
   "description": "A mod to add Dams for power generation in Minecraft.",
   "version": "${version}",
