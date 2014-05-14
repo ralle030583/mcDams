@@ -8,6 +8,7 @@ import buildcraft.api.power.PowerHandler;
 import mcDams.blocks.TestDam;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.common.Mod;
@@ -31,10 +32,8 @@ public class McDams
       //  System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
 
  
-        testDamBlock = new TestDam().setBlockName("testDam");
-        
-		GameRegistry.registerBlock(testDamBlock,  "testDam");
-
+    	testDamBlock = new TestDam().setBlockName("testdam").setCreativeTab(CreativeTabs.tabBlock).setBlockTextureName(MODID + ":" + "testDam");
+    	GameRegistry.registerBlock(testDamBlock, "tutorialBlock");
       
     }
 }
