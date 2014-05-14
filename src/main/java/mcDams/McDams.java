@@ -18,7 +18,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = McDams.MODID, version = McDams.VERSION, name="Dams")
 public class McDams
 {
-    public static final String MODID = "mcdams";
+    public static final String MODID = "mcDams";
     public static final String VERSION = "0.0.1";
     
     
@@ -28,12 +28,12 @@ public class McDams
     public void init(FMLInitializationEvent event)
     {
 
-        System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
+      //  System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
 
  
         testDamBlock = new TestDam().setBlockName("testDam");
         
-		GameRegistry.registerBlock(testDamBlock,  "testDamblockname");
+		GameRegistry.registerBlock(testDamBlock,  "testDam");
 
       
     }

@@ -20,7 +20,7 @@ public class TestDam extends Block {
 
 	public TestDam() {
 		super(Material.rock);
-		setBlockName("tutorialBlock");
+		
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
 
