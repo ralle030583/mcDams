@@ -20,11 +20,20 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class TileDamValve extends TileEntity {
 	
 	private List<IDamPart> registeredDamParts = new ArrayList<IDamPart>();
+	private ForgeDirection orientation = ForgeDirection.UNKNOWN;
 	
 	@Override
 	public void updateEntity() {
 		super.updateEntity();
 	}
+
+	/**
+	 * Delivers the Orientation of the Dam.
+	 * @return ForgeDirection 
+	 */
+	ForgeDirection getOrientation(){
+		return this.orientation;
+	};
 	
 	/**
 	 * Register a part to a Dam and delivieres if it was successfull
@@ -55,11 +64,13 @@ public class TileDamValve extends TileEntity {
 	
 	@Override
 	public void readFromNBT(NBTTagCompound p_145839_1_) {
+		// TODO 
 		super.readFromNBT(p_145839_1_);
 	}
 	
 	@Override
 	public void writeToNBT(NBTTagCompound p_145841_1_) {
+		// TODO 
 		super.writeToNBT(p_145841_1_);
 	}
 	
