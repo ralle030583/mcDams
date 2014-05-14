@@ -20,7 +20,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class TileDamValve extends TileEntity {
 	
 	private List<IDamPart> registeredDamParts = new ArrayList<IDamPart>();
-	private ForgeDirection orientation = ForgeDirection.UNKNOWN;
+	private ForgeDirection orientation;
 	
 	@Override
 	public void updateEntity() {
@@ -72,6 +72,11 @@ public class TileDamValve extends TileEntity {
 	public void writeToNBT(NBTTagCompound p_145841_1_) {
 		// TODO 
 		super.writeToNBT(p_145841_1_);
+	}
+
+	public void setOrientation(ForgeDirection orientation) {
+		this.orientation = orientation; 
+		
 	}
 	
 }
