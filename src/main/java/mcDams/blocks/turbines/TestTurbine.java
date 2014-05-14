@@ -1,11 +1,11 @@
-package mcDams.blocks.valves;
+package mcDams.blocks.turbines;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class TestValve extends Block{
+public class TestTurbine extends Block{
 
-	public TestValve() {
+	public TestTurbine() {
 		super(Material.rock);
 	}
 
