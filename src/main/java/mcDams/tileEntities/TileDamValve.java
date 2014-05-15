@@ -31,7 +31,7 @@ public class TileDamValve extends TileEntity {
 	 * Delivers the Orientation of the Dam.
 	 * @return ForgeDirection 
 	 */
-	ForgeDirection getOrientation(){
+	public ForgeDirection getOrientation(){
 		return this.orientation;
 	};
 	
