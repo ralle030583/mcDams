@@ -15,6 +15,11 @@ public interface IWall extends IDamPart{
 	 * @return
 	 */
 	int getTierLevel();
-	
+
+	/**
+	 * Lower Parts of a Damm has to be Base Parts. (idea for further releases)
+	 * @return allowed to be buttom part of a dam
+	 */
+	boolean isBase();
 	
 }
