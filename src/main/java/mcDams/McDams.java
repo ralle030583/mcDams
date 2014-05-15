@@ -5,7 +5,6 @@ import javax.print.attribute.standard.MediaSize.Engineering;
 import buildcraft.api.fuels.IronEngineCoolant;
 import buildcraft.api.fuels.IronEngineCoolant.Coolant;
 import buildcraft.api.power.PowerHandler;
-//mport mcDams.blocks.TestDamWall;
 import mcDams.blocks.turbines.TestTurbine;
 import mcDams.blocks.valves.TestValve;
 import mcDams.blocks.walls.TestDamWall;

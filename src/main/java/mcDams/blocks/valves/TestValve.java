@@ -53,12 +53,14 @@ public class TestValve extends Block implements ITileEntityProvider, IValve{
 	 * Pherhaps disallow placing in water so ppl dont start building dams under water at all?
 	 */
 	@Override
-	public boolean canPlaceBlockAt(World p_149742_1_, int p_149742_2_,
-			int p_149742_3_, int p_149742_4_) {
-		return super
-				.canPlaceBlockAt(p_149742_1_, p_149742_2_, p_149742_3_, p_149742_4_);
+	public boolean canPlaceBlockAt(World world, int x,
+			int y, int z) {
+		if (!world.isAirBlock(x, y, z)) { //stop placing valve in liquid 
+			return false;
+		}
+		return super.canPlaceBlockAt(world, x, y, z);
 	}
-
+	
 	@Override
 	public TileEntity createNewTileEntity(World world, int metaData) {
 		if (!world.isRemote){ // No need clientside, or?
