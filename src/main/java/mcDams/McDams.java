@@ -5,9 +5,10 @@ import javax.print.attribute.standard.MediaSize.Engineering;
 import buildcraft.api.fuels.IronEngineCoolant;
 import buildcraft.api.fuels.IronEngineCoolant.Coolant;
 import buildcraft.api.power.PowerHandler;
-import mcDams.blocks.TestDam;
+//mport mcDams.blocks.TestDamWall;
 import mcDams.blocks.turbines.TestTurbine;
 import mcDams.blocks.valves.TestValve;
+import mcDams.blocks.walls.TestDamWall;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -56,7 +57,7 @@ public class McDams
       //  System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
 
  
-    	testDamBlock = new TestDam().setBlockName("testdam").setCreativeTab(McDamTab).setBlockTextureName(MODID + ":" + "testDam");
+    	testDamBlock = new TestDamWall().setBlockName("testdam").setCreativeTab(McDamTab).setBlockTextureName(MODID + ":" + "testDam");
     	GameRegistry.registerBlock(testDamBlock, "testDamblock");
     	
     	testValveBlock = new TestValve().setBlockName("testvalve").setCreativeTab(McDamTab).setBlockTextureName(MODID + ":" + "testValve");
