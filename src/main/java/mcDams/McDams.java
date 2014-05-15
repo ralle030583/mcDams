@@ -9,6 +9,7 @@ import buildcraft.api.power.PowerHandler;
 import mcDams.blocks.turbines.TestTurbine;
 import mcDams.blocks.valves.TestValve;
 import mcDams.blocks.walls.TestDamWall;
+import mcDams.tileEntities.TileDamValve;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -21,49 +22,42 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = McDams.MODID, version = McDams.VERSION, name="Dams")
-public class McDams
-{
-    public static final String MODID = "mcDams";
-    public static final String VERSION = "0.0.1";
-    
-    
-    public static Block testDamBlock;
-    public static Block   testValveBlock;
-    public static Block testTurbine;
-    
-   
-    
-    
-    
-    public static CreativeTabs McDamTab = new CreativeTabs("damtab")
-    {
-    public Item getTabIconItem()
-    {
-    return Items.bed;
-    }
-    };
-    
-    
-    
-    
-    
-    
-    
-    @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
+@Mod(modid = McDams.MODID, version = McDams.VERSION, name = "Dams")
+public class McDams {
+	public static final String MODID = "mcDams";
+	public static final String VERSION = "0.0.1";
 
-      //  System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
+	public static Block testDamBlock;
+	public static Block testValveBlock;
+	public static Block testTurbine;
 
- 
-    	testDamBlock = new TestDamWall().setBlockName("testdam").setCreativeTab(McDamTab).setBlockTextureName(MODID + ":" + "testDam");
-    	GameRegistry.registerBlock(testDamBlock, "testDamblock");
-    	
-    	testValveBlock = new TestValve().setBlockName("testvalve").setCreativeTab(McDamTab).setBlockTextureName(MODID + ":" + "testValve");
-    	GameRegistry.registerBlock(testValveBlock, "testValveBlock");
-    	testTurbine = new TestTurbine().setBlockName("testturbine").setCreativeTab(McDamTab).setBlockTextureName(MODID + ":" + "testturbine");
-    	GameRegistry.registerBlock(testTurbine, "testturbineBlock");
-      
-    }
+	public static CreativeTabs McDamTab = new CreativeTabs("damtab") {
+		public Item getTabIconItem() {
+			return Items.bed;
+		}
+	};
+
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+
+		// System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
+
+		
+		GameRegistry.registerTileEntity(TileDamValve.class, "mcDamsValve");
+		
+		testDamBlock = new TestDamWall().setBlockName("testdam")
+				.setCreativeTab(McDamTab)
+				.setBlockTextureName(MODID + ":" + "testDam");
+		GameRegistry.registerBlock(testDamBlock, "testDamblock");
+
+		testValveBlock = new TestValve().setBlockName("testvalve")
+				.setCreativeTab(McDamTab)
+				.setBlockTextureName(MODID + ":" + "testValve");
+		GameRegistry.registerBlock(testValveBlock, "testValveBlock");
+		testTurbine = new TestTurbine().setBlockName("testturbine")
+				.setCreativeTab(McDamTab)
+				.setBlockTextureName(MODID + ":" + "testturbine");
+		GameRegistry.registerBlock(testTurbine, "testturbineBlock");
+
+	}
 }
