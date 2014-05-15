@@ -3,6 +3,7 @@ package mcDams.blocks.valves;
 import mcDams.tileEntities.TileDamValve;
 import mcDams.utils.ConversionUtils;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockStaticLiquid;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
@@ -55,12 +56,9 @@ public class TestValve extends Block implements ITileEntityProvider, IValve{
 	@Override
 	public boolean canPlaceBlockAt(World world, int x,
 			int y, int z) {
-		if (!world.isAirBlock(x, y, z)) { //stop placing valve in liquid 
-			return false;
-		}
 		return super.canPlaceBlockAt(world, x, y, z);
 	}
-	
+	 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metaData) {
 		if (!world.isRemote){ // No need clientside, or?
