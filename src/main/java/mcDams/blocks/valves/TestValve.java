@@ -13,7 +13,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TestValve extends Block implements ITileEntityProvider{
+public class TestValve extends Block implements ITileEntityProvider, IValve{
 
 	private static final String TILE_MAPPING = "mcDamValve";
 	
@@ -65,6 +65,17 @@ public class TestValve extends Block implements ITileEntityProvider{
 			return new TileDamValve();
 		}
 		return null;
+	}
+
+	@Override
+	public boolean isPartOfDam() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public IValve getValve() {
+		return this;
 	}
 	
 

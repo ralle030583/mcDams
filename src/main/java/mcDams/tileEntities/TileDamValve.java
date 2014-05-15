@@ -62,20 +62,27 @@ public class TileDamValve extends TileEntity {
 	}
 	
 	
+	// TODO Mappings for NBTTagCompound Entries..
+	
 	@Override
-	public void readFromNBT(NBTTagCompound p_145839_1_) {
-		orientation = ForgeDirection.getOrientation(p_145839_1_.getInteger("orientation"));
-		
-		// TODO registeredDamParts 
-		super.readFromNBT(p_145839_1_);
-	}
-	 
-	@Override
-	public void writeToNBT(NBTTagCompound p_145841_1_) {
-		p_145841_1_.setInteger("orientation", this.orientation.ordinal());
+	public void readFromNBT(NBTTagCompound compound) {
+		orientation = ForgeDirection.getOrientation(compound.getInteger("orientation"));
 		
 		// TODO registeredDamParts
-		super.writeToNBT(p_145841_1_);
+		int amount = compound.getInteger("parts_size");
+		for (int i = 0; i < amount; i++) {
+			
+		}
+		
+		super.readFromNBT(compound);
+	}
+	
+	@Override
+	public void writeToNBT(NBTTagCompound compound) {
+		compound.setInteger("orientation", this.orientation.ordinal());
+		compound.setInteger("parts_size", this.registeredDamParts.size());
+		// TODO registeredDamParts
+		super.writeToNBT(compound);
 	}
 
 	public void setOrientation(ForgeDirection orientation) {
