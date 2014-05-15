@@ -3,6 +3,7 @@ package mcDams.blocks.valves;
 import mcDams.tileEntities.TileDamValve;
 import mcDams.utils.ConversionUtils;
 import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
@@ -12,8 +13,10 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TestValve extends Block {
+public class TestValve extends Block implements ITileEntityProvider{
 
+	private static final String TILE_MAPPING = "mcDamValve";
+	
 	public TestValve() {
 		super(Material.rock);
 
@@ -32,11 +35,6 @@ public class TestValve extends Block {
 		return false;
 	}
 
-	@Override
-	public TileEntity createTileEntity(World world, int metadata) {
-		return new TileDamValve();
-	}
-
 	public void onBlockPlacedBy(World world, int x, int y, int z,
 			EntityLivingBase player, ItemStack stack) {
 
@@ -47,9 +45,27 @@ public class TestValve extends Block {
 				((TileDamValve) entity).setOrientation(facing);
 			}
 		}
-
+	}
+	
+	
+	/**
+	 * TODO Discuss with Ben if we should limit placing of damm valve in some way.
+	 * Pherhaps disallow placing in water so ppl dont start building dams under water at all?
+	 */
+	@Override
+	public boolean canPlaceBlockAt(World p_149742_1_, int p_149742_2_,
+			int p_149742_3_, int p_149742_4_) {
+		return super
+				.canPlaceBlockAt(p_149742_1_, p_149742_2_, p_149742_3_, p_149742_4_);
 	}
 
+	@Override
+	public TileEntity createNewTileEntity(World world, int metaData) {
+		if (!world.isRemote){ // No need clientside, or?
+			return new TileDamValve();
+		}
+		return null;
+	}
 	
 
 }
