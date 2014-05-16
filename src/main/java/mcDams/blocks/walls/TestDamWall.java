@@ -1,6 +1,7 @@
 package mcDams.blocks.walls;
 
 import mcDams.McDams;
+import mcDams.blocks.basic.DamPart;
 import mcDams.blocks.basic.IDamPart;
 import mcDams.blocks.valves.IValve;
 import mcDams.blocks.valves.TestValve;
@@ -21,7 +22,7 @@ import net.minecraftforge.common.util.ForgeDirection;
  * todo javadoc
  */
 
-public class TestDamWall extends Block implements IWall{
+public class TestDamWall extends DamPart implements IWall{
 	public TestDamWall() {
 		super(Material.rock);
 
