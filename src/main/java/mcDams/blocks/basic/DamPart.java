@@ -2,6 +2,8 @@ package mcDams.blocks.basic;
 
 import java.util.List;
 
+import com.google.common.collect.Lists;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
@@ -27,6 +29,6 @@ public abstract class DamPart extends Block {
 	}
 
 	private List<DamPart> getNeighbourDamParts() {
-		return null;
+		return Lists.newArrayList();
 	}
 }
