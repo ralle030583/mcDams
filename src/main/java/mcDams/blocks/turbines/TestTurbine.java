@@ -1,5 +1,6 @@
 package mcDams.blocks.turbines;
 
+import buildcraft.api.power.IPowerEmitter;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import mcDams.McDams;
 import mcDams.tileEntities.Tileturbine;
@@ -10,7 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class TestTurbine extends BlockContainer{
+public class TestTurbine extends BlockContainer {
 
 	public TestTurbine() {
 		super(Material.rock);

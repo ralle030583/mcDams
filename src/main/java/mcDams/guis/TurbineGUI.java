@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 public class TurbineGUI extends GuiContainer {
 
 
-	public static final ResourceLocation texture = new ResourceLocation("McDams", "textures/gui/turbine.png");
+	public static final ResourceLocation texture = new ResourceLocation("mcdams", "textures/gui/turbine.png");
 	public Tileturbine turbine;
 
 
