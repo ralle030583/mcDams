@@ -53,7 +53,7 @@ public class McDams {
 		// System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
 
 		// Register Tiles first
-		GameRegistry.registerTileEntity(TileDamFloodGate.class, "mcDamsValve");
+		GameRegistry.registerTileEntity(TileDamFloodGate.class, "mcDamsFloodgate");
 		GameRegistry.registerTileEntity(TileDamWall.class, "mcDamsWall");
 		GameRegistry.registerTileEntity(TileDamTurbine.class, "mcDamsTurbine");
 		
