@@ -9,7 +9,9 @@ import mcDams.blocks.turbines.TestTurbine;
 import mcDams.blocks.valves.TestValve;
 import mcDams.blocks.walls.TestDamWall;
 import mcDams.guis.GuiHandler;
+import mcDams.tileEntities.TileDamTurbine;
 import mcDams.tileEntities.TileDamValve;
+import mcDams.tileEntities.TileDamWall;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -50,8 +52,10 @@ public class McDams {
 
 		// System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
 
-		
+		// Register Tiles first
 		GameRegistry.registerTileEntity(TileDamValve.class, "mcDamsValve");
+		GameRegistry.registerTileEntity(TileDamWall.class, "mcDamsWall");
+		GameRegistry.registerTileEntity(TileDamTurbine.class, "mcDamsTurbine");
 		
 		//NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());

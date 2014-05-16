@@ -3,7 +3,7 @@ package mcDams.guis;
 import cpw.mods.fml.common.network.IGuiHandler;
 import mcDams.McDams;
 import mcDams.containers.TurbineContainer;
-import mcDams.tileEntities.Tileturbine;
+import mcDams.tileEntities.TileDamTurbine;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -20,9 +20,9 @@ public class GuiHandler implements IGuiHandler {
 			switch (ID) {
 			//case Cookies.guiGiftBox:
 			case McDams.guiTurbine:
-				if (entity instanceof Tileturbine) {
+				if (entity instanceof TileDamTurbine) {
 					return new TurbineContainer(player.inventory,
-							(Tileturbine) entity);
+							(TileDamTurbine) entity);
 				}
 			}
 		}
@@ -44,9 +44,9 @@ public class GuiHandler implements IGuiHandler {
 
 			case McDams.guiTurbine:
 
-				if (entity instanceof Tileturbine) {
+				if (entity instanceof TileDamTurbine) {
 					return new TurbineGUI(player.inventory,
-							(Tileturbine) entity);
+							(TileDamTurbine) entity);
 
 				}
 

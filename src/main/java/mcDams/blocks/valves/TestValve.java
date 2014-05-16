@@ -21,16 +21,12 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TestValve extends DamPart implements ITileEntityProvider, IValve{
+public class TestValve extends DamPart implements ITileEntityProvider {
 
 	private static final String TILE_MAPPING = "mcDamValve";
-	
-	public TestValve() {
-		super(Material.rock);
 
-		setStepSound(Block.soundTypeStone);
-		setHardness(3.5F);
-		setResistance(10F);
+	public TestValve() {
+		super();
 	}
 
 	@Override
@@ -46,45 +42,32 @@ public class TestValve extends DamPart implements ITileEntityProvider, IValve{
 	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z,
 			EntityLivingBase player, ItemStack stack) {
-		super.onBlockPlacedBy(world, x, y, z, player, stack); 
+		super.onBlockPlacedBy(world, x, y, z, player, stack);
 		if (!world.isRemote) {
-			ForgeDirection facing = ConversionUtils.getFacingDirectionOfEntity(player);
+			ForgeDirection facing = ConversionUtils
+					.getFacingDirectionOfEntity(player);
 			TileEntity entity = world.getTileEntity(x, y, z);
 			if (entity != null && entity instanceof TileDamValve) {
 				((TileDamValve) entity).setOrientation(facing);
 			}
 		}
 	}
-	
-	
+
 	/**
-	 * TODO Discuss with Ben if we should limit placing of damm valve in some way.
-	 * Pherhaps disallow placing in water so ppl dont start building dams under water at all?
+	 * TODO Discuss with Ben if we should limit placing of damm valve in some
+	 * way. Pherhaps disallow placing in water so ppl dont start building dams
+	 * under water at all?
 	 */
 	@Override
-	public boolean canPlaceBlockAt(World world, int x,
-			int y, int z) {
+	public boolean canPlaceBlockAt(World world, int x, int y, int z) {
 		return super.canPlaceBlockAt(world, x, y, z);
 	}
-	 
+
 	@Override
 	public TileEntity createNewTileEntity(World world, int metaData) {
-		if (!world.isRemote){ // No need clientside, or?
+		if (!world.isRemote) { // No need clientside, or?
 			return new TileDamValve();
 		}
 		return null;
 	}
-
-	@Override
-	public boolean isPartOfDam() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public IValve getValve() {
-		return this;
-	}
-	
-
 }

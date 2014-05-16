@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import buildcraft.api.power.IPowerEmitter;
-import mcDams.blocks.basic.IDamPart;
-import mcDams.blocks.turbines.ITurbine;
-import mcDams.blocks.valves.IValve;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -19,7 +16,7 @@ import net.minecraftforge.common.util.ForgeDirection;
  */
 public class TileDamValve extends TileEntity {
 	
-	private List<IDamPart> registeredDamParts = new ArrayList<IDamPart>();
+	private List<TileDamPart> registeredDamParts = new ArrayList<TileDamPart>();
 	private ForgeDirection orientation;
 	
 	@Override
@@ -39,8 +36,8 @@ public class TileDamValve extends TileEntity {
 	 * Register a part to a Dam and delivieres if it was successfull
 	 * @return
 	 */
-	public boolean registerPart(IDamPart part){
-		if (part instanceof IValve){
+	public boolean registerPart(TileDamPart part){
+		if (part.isValve()){
 			// We want only one Valve for each Dam, Noob!
 			return false;
 		}
@@ -51,11 +48,11 @@ public class TileDamValve extends TileEntity {
 	 * Deliveres the registered Turbines. 
 	 * @return
 	 */
-	public List<ITurbine> getTurbines() {
-		List<ITurbine> turbines = new ArrayList<ITurbine>();
-		for (IDamPart part : this.registeredDamParts) {
-			if (part instanceof ITurbine) {
-				turbines.add((ITurbine)part);
+	public List<TileDamPart> getTurbines() {
+		List<TileDamPart> turbines = new ArrayList<TileDamPart>();
+		for (TileDamPart part : this.registeredDamParts) {
+			if (part.isTurbine()){
+				turbines.add(part);
 			}
 		}
 		return turbines;
