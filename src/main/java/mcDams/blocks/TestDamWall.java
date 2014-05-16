@@ -1,11 +1,10 @@
-package mcDams.blocks.walls;
+package mcDams.blocks;
 
 import mcDams.McDams;
 import mcDams.blocks.basic.DamPart;
-import mcDams.blocks.valves.TestValve;
-import mcDams.tileEntities.TileDamPart;
-import mcDams.tileEntities.TileDamValve;
+import mcDams.tileEntities.TileDamFloodGate;
 import mcDams.tileEntities.TileDamWall;
+import mcDams.tileEntities.basic.TileDamPart;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;

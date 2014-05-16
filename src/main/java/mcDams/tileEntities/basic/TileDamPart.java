@@ -1,4 +1,4 @@
-package mcDams.tileEntities;
+package mcDams.tileEntities.basic;
 
 import mcDams.blocks.basic.DamPartType;
 import net.minecraft.block.Block;
@@ -14,16 +14,20 @@ public abstract class TileDamPart extends TileEntity {
 		this.type = _type;
 	}
 
-	boolean isTurbine(){
+	public boolean isTurbine(){
 		return DamPartType.TURBINE.equals(this.type);
 	}
 	
-	boolean isWall(){
+	public boolean isWall(){
 		return DamPartType.WALL.equals(this.type);
 	}
 	
-	boolean isValve(){
-		return DamPartType.WALL.equals(this.type);
+	public boolean isValve(){
+		return DamPartType.VALVE.equals(this.type);
+	}
+	
+	public boolean isFloodGate(){
+		return DamPartType.FLOODGATE.equals(this.type);
 	}
 	
 	

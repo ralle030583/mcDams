@@ -1,7 +1,7 @@
-package mcDams.blocks.valves;
+package mcDams.blocks;
 
 import mcDams.blocks.basic.DamPart;
-import mcDams.tileEntities.TileDamValve;
+import mcDams.tileEntities.TileDamFloodGate;
 import mcDams.utils.ConversionUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDynamicLiquid;
@@ -21,11 +21,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TestValve extends DamPart implements ITileEntityProvider {
+public class TestFloodGate extends DamPart implements ITileEntityProvider {
 
 	private static final String TILE_MAPPING = "mcDamValve";
 
-	public TestValve() {
+	public TestFloodGate() {
 		super();
 	}
 
@@ -47,8 +47,8 @@ public class TestValve extends DamPart implements ITileEntityProvider {
 			ForgeDirection facing = ConversionUtils
 					.getFacingDirectionOfEntity(player);
 			TileEntity entity = world.getTileEntity(x, y, z);
-			if (entity != null && entity instanceof TileDamValve) {
-				((TileDamValve) entity).setOrientation(facing);
+			if (entity != null && entity instanceof TileDamFloodGate) {
+				((TileDamFloodGate) entity).setOrientation(facing);
 			}
 		}
 	}
@@ -66,7 +66,7 @@ public class TestValve extends DamPart implements ITileEntityProvider {
 	@Override
 	public TileEntity createNewTileEntity(World world, int metaData) {
 		if (!world.isRemote) { // No need clientside, or?
-			return new TileDamValve();
+			return new TileDamFloodGate();
 		}
 		return null;
 	}

@@ -1,7 +1,8 @@
 package mcDams.blocks.basic;
 
 public enum DamPartType {
+	FLOODGATE,
 	WALL,
-	VALVE,
+	VALVE, // for later use
 	TURBINE
 }

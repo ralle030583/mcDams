@@ -2,7 +2,7 @@ package mcDams.guis;
 
 import org.lwjgl.opengl.GL11;
 
-import mcDams.blocks.turbines.TestTurbine;
+import mcDams.blocks.TestTurbine;
 import mcDams.containers.TurbineContainer;
 import mcDams.tileEntities.TileDamTurbine;
 import net.minecraft.client.Minecraft;

@@ -5,12 +5,12 @@ import javax.print.attribute.standard.MediaSize.Engineering;
 import buildcraft.api.fuels.IronEngineCoolant;
 import buildcraft.api.fuels.IronEngineCoolant.Coolant;
 import buildcraft.api.power.PowerHandler;
-import mcDams.blocks.turbines.TestTurbine;
-import mcDams.blocks.valves.TestValve;
-import mcDams.blocks.walls.TestDamWall;
+import mcDams.blocks.TestDamWall;
+import mcDams.blocks.TestFloodGate;
+import mcDams.blocks.TestTurbine;
 import mcDams.guis.GuiHandler;
 import mcDams.tileEntities.TileDamTurbine;
-import mcDams.tileEntities.TileDamValve;
+import mcDams.tileEntities.TileDamFloodGate;
 import mcDams.tileEntities.TileDamWall;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -53,7 +53,7 @@ public class McDams {
 		// System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
 
 		// Register Tiles first
-		GameRegistry.registerTileEntity(TileDamValve.class, "mcDamsValve");
+		GameRegistry.registerTileEntity(TileDamFloodGate.class, "mcDamsValve");
 		GameRegistry.registerTileEntity(TileDamWall.class, "mcDamsWall");
 		GameRegistry.registerTileEntity(TileDamTurbine.class, "mcDamsTurbine");
 		
@@ -64,7 +64,7 @@ public class McDams {
 				.setBlockTextureName(MODID + ":" + "testDam");
 		GameRegistry.registerBlock(testDamBlock, "testDamblock");
 
-		testValveBlock = new TestValve().setBlockName("testvalve")
+		testValveBlock = new TestFloodGate().setBlockName("testvalve")
 				.setCreativeTab(McDamTab)
 				.setBlockTextureName(MODID + ":" + "testValve");
 		GameRegistry.registerBlock(testValveBlock, "testValveBlock");

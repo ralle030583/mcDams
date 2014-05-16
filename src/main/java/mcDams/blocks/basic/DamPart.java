@@ -27,7 +27,4 @@ public abstract class DamPart extends Block implements ITileEntityProvider{
 		super.onBlockPlacedBy(world, x, y, z, player, stack);
 	}
 
-	private List<DamPart> getNeighbourDamParts() {
-		return Lists.newArrayList();
-	}
 }

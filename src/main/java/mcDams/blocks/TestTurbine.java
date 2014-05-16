@@ -1,4 +1,4 @@
-package mcDams.blocks.turbines;
+package mcDams.blocks;
 
 import buildcraft.api.power.IPowerEmitter;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;

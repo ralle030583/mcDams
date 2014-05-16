@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import buildcraft.api.power.IPowerEmitter;
+import mcDams.blocks.basic.DamPartType;
+import mcDams.tileEntities.basic.TileDamPart;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -14,10 +16,14 @@ import net.minecraftforge.common.util.ForgeDirection;
  * 
  * @author Ralle030583
  */
-public class TileDamValve extends TileEntity {
+public class TileDamFloodGate extends TileDamPart {
 	
 	private List<TileDamPart> registeredDamParts = new ArrayList<TileDamPart>();
 	private ForgeDirection orientation;
+	
+	public TileDamFloodGate() {
+		super(DamPartType.FLOODGATE);
+	}
 	
 	@Override
 	public void updateEntity() {
