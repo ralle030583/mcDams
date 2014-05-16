@@ -1,11 +1,16 @@
 package mcDams.tileEntities;
 
+import mcDams.blocks.basic.DamPartType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
-public class Tileturbine extends TileEntity implements ISidedInventory{
+public class TileDamTurbine extends TileDamPart implements ISidedInventory{
+
+	public TileDamTurbine() {
+		super(DamPartType.TURBINE);
+	}
 
 	@Override
 	public int getSizeInventory() {

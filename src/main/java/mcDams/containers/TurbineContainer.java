@@ -1,7 +1,7 @@
 package mcDams.containers;
 
 import mcDams.slots.TurbineSlot;
-import mcDams.tileEntities.Tileturbine;
+import mcDams.tileEntities.TileDamTurbine;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -11,14 +11,14 @@ import net.minecraft.item.ItemStack;
 public class TurbineContainer extends Container {
 
 	
-	private Tileturbine turbineentity;
+	private TileDamTurbine turbineentity;
 	
 	@Override
 	public void detectAndSendChanges() {
 		super.detectAndSendChanges();
 	}
 	
-	public TurbineContainer(InventoryPlayer inventory, Tileturbine entity) {
+	public TurbineContainer(InventoryPlayer inventory, TileDamTurbine entity) {
 		this.turbineentity = entity;
 
 		this.addSlotToContainer(new TurbineSlot(entity, 0, 62, 19));
