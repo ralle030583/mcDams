@@ -37,7 +37,7 @@ public class McDams {
 	public static Block testTurbine;
 
 	public static final int guiTurbine = 0;
-	
+	//TEST 
 	
 	public static CreativeTabs McDamTab = new CreativeTabs("damtab") {
 		public Item getTabIconItem() {
