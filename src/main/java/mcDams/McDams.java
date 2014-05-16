@@ -18,6 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -26,6 +27,9 @@ public class McDams {
 	public static final String MODID = "mcDams";
 	public static final String VERSION = "0.0.1";
 
+	@Instance(value = "mcDams")
+	public static McDams instance;
+	
 	public static Block testDamBlock;
 	public static Block testValveBlock;
 	public static Block testTurbine;
