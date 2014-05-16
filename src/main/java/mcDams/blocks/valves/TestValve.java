@@ -1,20 +1,27 @@
 package mcDams.blocks.valves;
 
+import mcDams.blocks.basic.DamPart;
 import mcDams.tileEntities.TileDamValve;
 import mcDams.utils.ConversionUtils;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDynamicLiquid;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.BlockStaticLiquid;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.gui.ChatLine;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class TestValve extends Block implements ITileEntityProvider, IValve{
+public class TestValve extends DamPart implements ITileEntityProvider, IValve{
 
 	private static final String TILE_MAPPING = "mcDamValve";
 	
@@ -36,9 +43,10 @@ public class TestValve extends Block implements ITileEntityProvider, IValve{
 		return false;
 	}
 
+	@Override
 	public void onBlockPlacedBy(World world, int x, int y, int z,
 			EntityLivingBase player, ItemStack stack) {
-
+		super.onBlockPlacedBy(world, x, y, z, player, stack); 
 		if (!world.isRemote) {
 			ForgeDirection facing = ConversionUtils.getFacingDirectionOfEntity(player);
 			TileEntity entity = world.getTileEntity(x, y, z);
