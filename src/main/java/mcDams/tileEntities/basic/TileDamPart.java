@@ -31,6 +31,11 @@ public abstract class TileDamPart extends TileEntity {
 	}
 	
 	
+	public void tryRegisterToDam(){
+		this.connectedValve = null;
+		// TODO 
+	}
+	
 	public TileDamPart getConnectedValve() {
 		return connectedValve;
 	}

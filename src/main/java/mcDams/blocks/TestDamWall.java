@@ -1,15 +1,32 @@
 package mcDams.blocks;
 
+import java.util.Random;
+
+import cpw.mods.fml.common.MinecraftDummyContainer;
 import mcDams.blocks.basic.DamPart;
 import mcDams.tileEntities.TileDamWall;
 import mcDams.tileEntities.basic.TileDamPart;
+import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.client.ForgeHooksClient;
+import net.minecraftforge.common.ForgeChunkManager;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.ForgeInternalHandler;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.network.ForgeNetworkHandler;
 import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.event.world.BlockEvent.BreakEvent;
+import net.minecraftforge.server.command.ForgeCommand;
+import net.minecraftforge.transformers.ForgeAccessTransformer;
 
 /**
  * todo javadoc
@@ -35,6 +52,58 @@ public class TestDamWall extends DamPart {
 		return new TileDamWall();
 	}
 
+	@Override
+	public void onBlockPreDestroy(World world, int x,
+			int y, int z, int meta) {
+		super.onBlockPreDestroy(world, x, y, z,
+				meta);
+		
+		// If destroyed by a player and there is another dammpart above.. yeah destroy it also, dam breach!
+		// Just to annoy players :-P
+		Block toDestroy = world.getBlock(x, y + 1, z);
+		if (toDestroy!= null && toDestroy instanceof DamPart){
+			toDestroy.dropBlockAsItem(world, x, y + 1, z, 0, 0);
+			world.setBlock(x, y + 1, z, Blocks.water);
+		}
+		
+		Random rnd = new Random(new java.util.Date().getTime());
+		
+		Block aboveSurrounding  = world.getBlock(x, y + 1, z);
+				
+		toDestroy = world.getBlock(x + 1, y + 1, z);
+		if (rnd.nextBoolean() && toDestroy!= null && toDestroy instanceof DamPart){
+			toDestroy.dropBlockAsItem(world, x + 1, y + 1, z, 0, 0);
+			world.setBlock(x + 1, y + 1, z, Blocks.water);
+		}
+		
+		toDestroy = world.getBlock(x - 1, y + 1, z);
+		if (rnd.nextBoolean() && toDestroy!= null && toDestroy instanceof DamPart){
+			toDestroy.dropBlockAsItem(world, x - 1, y + 1, z, 0, 0);
+			world.setBlock(x - 1, y + 1, z, Blocks.water);
+		}
+		
+		toDestroy = world.getBlock(x , y + 1, z + 1);
+		if (rnd.nextBoolean() && toDestroy!= null && toDestroy instanceof DamPart){
+			toDestroy.dropBlockAsItem(world, x, y + 1, z +1, 0, 0);
+			world.setBlock(x , y + 1, z + 1, Blocks.water);
+		}
+		
+		toDestroy = world.getBlock(x , y + 1, z - 1);
+		if (rnd.nextBoolean() && toDestroy!= null && toDestroy instanceof DamPart){
+			toDestroy.dropBlockAsItem(world, x, y + 1, z -1, 0, 0);
+			world.setBlock(x , y + 1, z - 1, Blocks.water);
+		}
+	}
+	
+	@Override
+	public void onBlockDestroyedByPlayer(World world, int x,
+			int y, int z, int meta) {
+		super.onBlockDestroyedByPlayer(world, x, y,
+				z, meta);
+		
+						
+	}
+	
 	public void onBlockPlacedBy(World world, int x, int y, int z,
 			EntityLivingBase player, ItemStack stack) {
 		// thats stolen from k4unl.minecraft.Hydraulicraft
