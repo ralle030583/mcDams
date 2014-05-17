@@ -2,9 +2,9 @@ package mcDams.guis;
 
 import org.lwjgl.opengl.GL11;
 
-import mcDams.blocks.turbines.TestTurbine;
+import mcDams.blocks.TestTurbine;
 import mcDams.containers.TurbineContainer;
-import mcDams.tileEntities.Tileturbine;
+import mcDams.tileEntities.TileDamTurbine;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -15,12 +15,12 @@ public class TurbineGUI extends GuiContainer {
 
 
 	public static final ResourceLocation texture = new ResourceLocation("mcdams", "textures/gui/turbine.png");
-	public Tileturbine turbine;
+	public TileDamTurbine turbine;
 
 
 
 
-	public TurbineGUI(InventoryPlayer inventory, Tileturbine entity) {
+	public TurbineGUI(InventoryPlayer inventory, TileDamTurbine entity) {
 		super(new TurbineContainer(inventory, entity));
 		this.turbine = entity;
 		this.xSize = 175;
