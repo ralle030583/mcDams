@@ -56,14 +56,13 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory{
 
 	@Override
 	public int getInventoryStackLimit() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+		return 1;
 	}
 
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer var1) {
-		// TODO Auto-generated method stub
-		//return false;
+
 	return true;
 	}
 

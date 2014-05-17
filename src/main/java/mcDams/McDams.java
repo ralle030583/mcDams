@@ -9,6 +9,7 @@ import mcDams.blocks.TestDamWall;
 import mcDams.blocks.TestFloodGate;
 import mcDams.blocks.TestTurbine;
 import mcDams.guis.GuiHandler;
+import mcDams.items.RotorIron;
 import mcDams.items.RotorWood;
 import mcDams.tileEntities.TileDamFloodGate;
 import mcDams.tileEntities.TileDamTurbine;
@@ -49,6 +50,7 @@ public class McDams {
 	public static Block testTurbine;
 	
 	public static Item woodRotor;
+	public static Item ironRotor;
 
 	public static final int guiTurbine = 0;
 	//TEST 
@@ -85,10 +87,12 @@ public class McDams {
 				.setBlockTextureName(MODID + ":" + "testturbine");
 		GameRegistry.registerBlock(testTurbine, "testturbineBlock");
 		
+		
+		//the 0 maybe not needed as i think it's 1.6 item id - Ben
 		woodRotor = new RotorWood(0);
-//		woodRotor.registerItems();
 		GameRegistry.registerItem(woodRotor, "woodRotor");
-		//woodRotor.registerIcons(par1IconRegister);
+		ironRotor = new RotorIron(0);
+		GameRegistry.registerItem(ironRotor, "ironRotor");
 		
 
 	}
