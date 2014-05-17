@@ -1,16 +1,23 @@
 package mcDams.blocks;
 
 import mcDams.McDams;
+import mcDams.containers.TurbineContainer;
 import mcDams.tileEntities.TileDamTurbine;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
 public class TestTurbine extends BlockContainer {
 
+
+	
+	
+	
 	public TestTurbine() {
 		super(Material.rock);
 	}
@@ -38,4 +45,9 @@ public class TestTurbine extends BlockContainer {
 		return true;
 	}
 
+	
+	
+	
+	
 }
+

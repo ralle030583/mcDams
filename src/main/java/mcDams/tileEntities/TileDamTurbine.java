@@ -1,15 +1,18 @@
 package mcDams.tileEntities;
 
 import mcDams.blocks.basic.DamPartType;
+import mcDams.containers.TurbineContainer;
 import mcDams.items.AbstractRotor;
 import mcDams.tileEntities.basic.TileDamPart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class TileDamTurbine extends TileDamPart implements ISidedInventory{
 
-	
+	private int ticks;
+	public boolean isActive = true;
 	private ItemStack[] slots = new ItemStack[1];
 	private String inventoryName;
 	private int transferCooldown = -1;
@@ -26,8 +29,22 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory{
 
 	@Override
 	public ItemStack getStackInSlot(int i) {
-		return this.slots[i];
-	}
+		if (this.slots[i] != null){
+			
+			return this.slots[i];
+			
+		}
+		else{
+			return null;
+		}
+		}
+		
+		
+	
+	
+	
+	
+	
 
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
@@ -167,5 +184,72 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory{
 	public boolean hasCustomInventoryName() {
 		return this.inventoryName != null && this.inventoryName.length() > 0;
 	}
+	
+	
+	
+	
+	
+	
+	
+public void updateEntity(){
+		
+		
+		
+		if (isActive){
+			if(this.getStackInSlot(0) != null){
+			generatePower();
+			DeteriorateRotor(1);
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+	
+
+	
+	private void generatePower() {
+		// This called when machine should output it's power per tick
+		
+	}
+
+	private void DeteriorateRotor(int damage){
+		
+		 ItemStack itemstack;
+		  itemstack = this.getStackInSlot(0);
+		
+		
+		
+	     if(itemstack != null){
+	    	 
+				ItemStack newStack = new ItemStack(
+						itemstack.getItem(), 1,
+						(itemstack.getItemDamage() + 1));
+				if (newStack.getItemDamage() >= newStack.getMaxDamage()) {
+					newStack = null;
+				}
+	    
+				this.setInventorySlotContents(0, newStack);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+	
+	
+	
+	
+	
 
 }
