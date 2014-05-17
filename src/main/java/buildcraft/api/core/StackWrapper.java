@@ -8,7 +8,6 @@
  */
 package buildcraft.api.core;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class StackWrapper {

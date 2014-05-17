@@ -1,15 +1,13 @@
 package mcDams.guis;
 
-import org.lwjgl.opengl.GL11;
-
-import mcDams.blocks.TestTurbine;
 import mcDams.containers.TurbineContainer;
 import mcDams.tileEntities.TileDamTurbine;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
+
+import org.lwjgl.opengl.GL11;
 
 public class TurbineGUI extends GuiContainer {
 

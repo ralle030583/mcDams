@@ -1,15 +1,13 @@
 package mcDams.blocks;
 
-import buildcraft.api.power.IPowerEmitter;
-import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 import mcDams.McDams;
 import mcDams.tileEntities.TileDamTurbine;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
 
 public class TestTurbine extends BlockContainer {
 

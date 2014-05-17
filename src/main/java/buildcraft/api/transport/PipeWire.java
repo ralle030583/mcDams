@@ -9,6 +9,7 @@
 package buildcraft.api.transport;
 
 import java.util.Locale;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 

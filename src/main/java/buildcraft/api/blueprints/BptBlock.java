@@ -8,9 +8,8 @@
  */
 package buildcraft.api.blueprints;
 
-import buildcraft.api.core.BuildCraftAPI;
-import java.util.ArrayList;
 import java.util.LinkedList;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.item.Item;

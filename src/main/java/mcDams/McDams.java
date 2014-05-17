@@ -53,6 +53,12 @@ public class McDams {
 	public static final int guiTurbine = 0;
 	//TEST 
 	
+	public static CreativeTabs McDamTab = new CreativeTabs("damtab") {
+		public Item getTabIconItem() {
+			return Items.bed;
+		}
+	};
+
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 
@@ -80,7 +86,8 @@ public class McDams {
 		GameRegistry.registerBlock(testTurbine, "testturbineBlock");
 		
 		woodRotor = new RotorWood(0);
-		woodRotor.registerItems();
+//		woodRotor.registerItems();
+		GameRegistry.registerItem(woodRotor, "woodRotor");
 		//woodRotor.registerIcons(par1IconRegister);
 		
 

@@ -1,9 +1,5 @@
 package mcDams.blocks.basic;
 
-import java.util.List;
-
-import com.google.common.collect.Lists;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;

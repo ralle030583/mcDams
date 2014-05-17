@@ -9,6 +9,7 @@
 package buildcraft.api.recipes;
 
 import java.util.SortedSet;
+
 import net.minecraftforge.fluids.FluidStack;
 
 public interface IRefineryRecipeManager {

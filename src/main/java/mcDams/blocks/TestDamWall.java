@@ -1,14 +1,9 @@
 package mcDams.blocks;
 
-import mcDams.McDams;
 import mcDams.blocks.basic.DamPart;
-import mcDams.tileEntities.TileDamFloodGate;
 import mcDams.tileEntities.TileDamWall;
 import mcDams.tileEntities.basic.TileDamPart;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;

@@ -3,12 +3,9 @@ package mcDams.tileEntities;
 import java.util.ArrayList;
 import java.util.List;
 
-import buildcraft.api.power.IPowerEmitter;
 import mcDams.blocks.basic.DamPartType;
 import mcDams.tileEntities.basic.TileDamPart;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 /**

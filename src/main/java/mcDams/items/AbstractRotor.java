@@ -1,9 +1,9 @@
 package mcDams.items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import mcDams.McDams;
 import net.minecraft.item.Item;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public abstract class  AbstractRotor extends Item{
 	

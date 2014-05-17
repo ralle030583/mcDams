@@ -8,7 +8,6 @@
  */
 package buildcraft.api.blueprints;
 
-import buildcraft.api.core.BuildCraftAPI;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

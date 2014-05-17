@@ -9,6 +9,7 @@
 package buildcraft.api.gates;
 
 import java.util.List;
+
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
