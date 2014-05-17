@@ -9,6 +9,7 @@ import mcDams.blocks.turbines.TestTurbine;
 import mcDams.blocks.valves.TestValve;
 import mcDams.blocks.walls.TestDamWall;
 import mcDams.guis.GuiHandler;
+import mcDams.items.RotorWood;
 import mcDams.tileEntities.TileDamValve;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -35,6 +36,8 @@ public class McDams {
 	public static Block testDamBlock;
 	public static Block testValveBlock;
 	public static Block testTurbine;
+	
+	public static Item woodRotor;
 
 	public static final int guiTurbine = 0;
 	//TEST 
@@ -68,6 +71,11 @@ public class McDams {
 				.setCreativeTab(McDamTab)
 				.setBlockTextureName(MODID + ":" + "testturbine");
 		GameRegistry.registerBlock(testTurbine, "testturbineBlock");
+		
+		woodRotor = new RotorWood(0);
+		woodRotor.registerItems();
+		//woodRotor.registerIcons(par1IconRegister);
+		
 
 	}
 }
