@@ -1,15 +1,15 @@
 package mcDams.tileEntities;
 
 import mcDams.blocks.basic.DamPartType;
-import mcDams.containers.TurbineContainer;
 import mcDams.items.AbstractRotor;
 import mcDams.tileEntities.basic.TileDamPart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.ForgeDirection;
+import buildcraft.api.power.IPowerEmitter;
 
-public class TileDamTurbine extends TileDamPart implements ISidedInventory{
+public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPowerEmitter{
 
 	private int ticks;
 	public boolean isActive = true;
@@ -213,9 +213,33 @@ public void updateEntity(){
 
 	
 	private void generatePower() {
-		// This called when machine should output it's power per tick
+	
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	private void DeteriorateRotor(int damage){
 		
@@ -246,6 +270,16 @@ public void updateEntity(){
 	
 	
 	}
+
+	@Override
+	public boolean canEmitPowerFrom(ForgeDirection side) {
+		// TODO Currently can emmit power from any side
+	
+		
+		return true;
+	}
+
+
 	
 	
 	

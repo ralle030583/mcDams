@@ -11,6 +11,8 @@ public class RotorIron extends AbstractRotor{
 
 	public RotorIron(int par1) {
 		super(par1);
+		
+
 		this.setMaxDamage(500);
 		
 	}
