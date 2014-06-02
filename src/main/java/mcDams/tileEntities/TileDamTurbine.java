@@ -92,19 +92,7 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPow
 		}
 	}
 
-	//@Override
-	//public String getInvName() {
-		//return this.isInvNameLocalized() ? this.inventoryName
-		//		: "container.hopper";
-	//	return this.isInvNameLocalized() ? this.inventoryName
-//				: "GiftBox";
-//	}
 
-	//@Override
-	//public boolean isInvNameLocalized() {
-	//	return this.inventoryName != null && this.inventoryName.length() > 0;
-
-	//}
 
 	@Override
 	public int getInventoryStackLimit() {
@@ -135,7 +123,7 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPow
 
 	@Override
 	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
-		// Only Cookies
+	
 		if (itemstack.getItem() instanceof AbstractRotor) {
 			return true;
 		}
@@ -145,19 +133,34 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPow
 
 	@Override
 	public int[] getAccessibleSlotsFromSide(int var1) {
-		// TODO Auto-generated method stub
-		return new int[4];
+	
+		return new int[1];
 	}
 
 	@Override
 	public boolean canInsertItem(int i, ItemStack itemstack, int j) {
-		// TODO Auto-generated method stub
+		// TODO needs testing - Ben
+		
+		
+		if (itemstack.getItem() instanceof AbstractRotor) {
+			
+			
+			if(slots[0] == null){
+			return true;	
+			}
+			else{
+				return false;
+			}
+			
+			
+			
+		}
 		return false;
 	}
 
 	@Override
 	public boolean canExtractItem(int i, ItemStack itemstack, int j) {
-		// TODO Auto-generated method stub
+	
 		return false;
 	}
 
@@ -273,7 +276,7 @@ public void updateEntity(){
 
 	@Override
 	public boolean canEmitPowerFrom(ForgeDirection side) {
-		// TODO Currently can emmit power from any side
+		
 	
 		
 		return true;
