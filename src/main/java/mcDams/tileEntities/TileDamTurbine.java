@@ -13,7 +13,7 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPow
 
 	private int ticks;
 	public boolean isActive = true;
-	private ItemStack[] slots = new ItemStack[1];
+	private ItemStack[] slots = new ItemStack[10];
 	private String inventoryName;
 	private int transferCooldown = -1;
 	private int DamMaxPower = 0;
@@ -199,13 +199,10 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPow
 public void updateEntity(){
 		
 		
-	if (IsConnectedToDam = true){
-		isActive = true;
-	}
-	else{
-		isActive = false;
-	}
+	updateDamStatus();
 	
+	
+	CheckInventory();
 		
 		if (isActive){
 			if(this.getStackInSlot(0) != null){
@@ -214,14 +211,46 @@ public void updateEntity(){
 			}
 			
 		}
-		
-		
-		
-		
-		
+			
 		
 	}
 	
+
+private void CheckInventory(){
+	
+	if(this.getStackInSlot(0) == null){
+		for(int i = 1; i < 10; i++){
+			if(this.getStackInSlot(i) != null){
+				ItemStack tstack;
+				tstack = this.getStackInSlot(i);
+				this.setInventorySlotContents(i, null);
+			this.setInventorySlotContents(0,tstack);	
+
+			break;
+			}
+			}
+			
+		}
+		}
+	
+	
+	
+	
+	
+
+
+
+
+
+
+private void updateDamStatus(){
+		if (IsConnectedToDam = true){
+		isActive = true;
+	}
+	else{
+		isActive = false;
+	}
+}
 
 	
 	private void generatePower() {

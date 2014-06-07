@@ -1,5 +1,6 @@
 package mcDams.containers;
 
+
 import mcDams.slots.TurbineSlot;
 import mcDams.tileEntities.TileDamTurbine;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,9 +22,25 @@ public class TurbineContainer extends Container {
 	public TurbineContainer(InventoryPlayer inventory, TileDamTurbine entity) {
 		this.turbineentity = entity;
 
-		this.addSlotToContainer(new TurbineSlot(entity, 0, 62, 19));
-
-
+		this.addSlotToContainer(new TurbineSlot(entity, 0, 75, 30));
+		
+		//for (int i = 1; i < 10; i++) {
+		//	this.addSlotToContainer(new TurbineSlot(entity, i, 10 + i * 16, 142));
+		//}
+//manually adding slots, probably should be a loop but for testing:
+		
+		this.addSlotToContainer(new TurbineSlot(entity, 1, 11, 17));
+		this.addSlotToContainer(new TurbineSlot(entity, 2, 29, 17));
+		this.addSlotToContainer(new TurbineSlot(entity, 3, 47, 17));
+		
+		this.addSlotToContainer(new TurbineSlot(entity, 4, 11, 35));
+		this.addSlotToContainer(new TurbineSlot(entity, 5, 29, 35));
+		this.addSlotToContainer(new TurbineSlot(entity, 6, 47, 35));
+		
+		this.addSlotToContainer(new TurbineSlot(entity, 7, 11, 53));
+		this.addSlotToContainer(new TurbineSlot(entity, 8, 29, 53));
+		this.addSlotToContainer(new TurbineSlot(entity, 9, 47, 53));
+		
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 9; j++) {
 				this.addSlotToContainer(new Slot(inventory, j + i * 9 + 9,
@@ -70,7 +87,7 @@ public class TurbineContainer extends Container {
 		return super.mergeItemStack(par1ItemStack, par2, par3, par4);
 	}
 
-	//copied method to deal with shift click, does not work but does prevent crash
+	// TODO fic method to filter invalid items
 	@Override
 
 	    public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
