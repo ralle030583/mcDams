@@ -3,6 +3,7 @@ package mcDams.tileEntities;
 import mcDams.blocks.basic.DamPartType;
 import mcDams.items.AbstractRotor;
 import mcDams.tileEntities.basic.TileDamPart;
+import mcDams.utils.McDamsWorldUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
@@ -259,9 +260,8 @@ private void updateDamStatus(){
 		TileEntity tmp = null;
 
 		for (ForgeDirection direction : ForgeDirection.VALID_DIRECTIONS) {
-			if ((tmp = getEntityFromDirection(this.worldObj, this.xCoord, this.yCoord, this.zCoord, direction)) instanceof IPowerReceptor){
-			
-				IPowerReceptor receptor;
+			if ((tmp = McDamsWorldUtils.getEntityFromDirection(this.worldObj, this.xCoord, this.yCoord, this.zCoord, direction)) instanceof IPowerReceptor){
+				IPowerReceptor receptor = (IPowerReceptor) tmp;
 				PowerReceiver test = receptor.getPowerReceiver(direction);
 				double testamount = 1.0;
 				
