@@ -268,9 +268,14 @@ private void updateDamStatus(){
 				double testamount = 450.0;
 				Type tempType = PowerHandler.Type.ENGINE;
 				
+				if (test == null){
+					return; // NPE ;-)
+				}
 				
 				
-				test.receiveEnergy(tempType, testamount, direction);
+				test.receiveEnergy(tempType, testamount, ForgeDirection
+						.getOrientation(ForgeDirection.OPPOSITES[direction
+								.ordinal()]));
 				
 				
 				// TODO Can't tell if we need this or not:
