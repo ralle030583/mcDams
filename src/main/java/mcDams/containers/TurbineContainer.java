@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 
 public class TurbineContainer extends Container {
 
-	
+																									
 	private TileDamTurbine turbineentity;
 	
 	@Override
@@ -22,7 +22,7 @@ public class TurbineContainer extends Container {
 	public TurbineContainer(InventoryPlayer inventory, TileDamTurbine entity) {
 		this.turbineentity = entity;
 
-		this.addSlotToContainer(new TurbineSlot(entity, 0, 75, 30));
+		this.addSlotToContainer(new TurbineSlot(entity, 0, 80, 35));
 		
 		//for (int i = 1; i < 10; i++) {
 		//	this.addSlotToContainer(new TurbineSlot(entity, i, 10 + i * 16, 142));
