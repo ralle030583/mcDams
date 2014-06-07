@@ -36,13 +36,13 @@ import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-
+//kentben test
 @Mod(modid = McDams.MODID, version = McDams.VERSION, name = "Dams")
 public class McDams {
 	public static final String MODID = "mcDams";
 	public static final String VERSION = "0.0.1";
 
-	@Instance(value = "mcDams")
+	@Instance(value = "mcDams") 
 	public static McDams instance;
 	
 	public static Block testDamBlock;
