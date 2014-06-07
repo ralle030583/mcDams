@@ -1,5 +1,7 @@
 package mcDams;
 
+import java.util.Properties;
+
 import javax.print.attribute.standard.MediaSize.Engineering;
 
 import buildcraft.api.fuels.IronEngineCoolant;
@@ -55,6 +57,8 @@ public class McDams {
 	public static final int guiTurbine = 0;
 	//TEST 
 	
+	public static Properties properties;
+	
 	public static CreativeTabs McDamTab = new CreativeTabs("damtab") {
 		public Item getTabIconItem() {
 			return Items.bed;
@@ -63,7 +67,9 @@ public class McDams {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-
+		
+		this.properties = readProperties();
+		
 		// System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
 
 		// Register Tiles first
@@ -95,5 +101,18 @@ public class McDams {
 		GameRegistry.registerItem(ironRotor, "ironRotor");
 		
 
+	}
+
+	public static Object getConfigValue(String key){
+		return properties.get(key);
+	}
+	
+	private Properties readProperties() {
+		// TODO Later from file
+		Properties props = new Properties();
+		
+		props.put(McDamsConfigs.GENERATE_WATER_ON_BREACH, false);
+		
+		return props;
 	}
 }
