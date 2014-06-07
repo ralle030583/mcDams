@@ -11,7 +11,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import buildcraft.api.power.IPowerEmitter;
 import buildcraft.api.power.IPowerReceptor;
+import buildcraft.api.power.PowerHandler;
 import buildcraft.api.power.PowerHandler.PowerReceiver;
+import buildcraft.api.power.PowerHandler.Type;
 
 public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPowerEmitter{
 
@@ -263,9 +265,16 @@ private void updateDamStatus(){
 			if ((tmp = McDamsWorldUtils.getEntityFromDirection(this.worldObj, this.xCoord, this.yCoord, this.zCoord, direction)) instanceof IPowerReceptor){
 				IPowerReceptor receptor = (IPowerReceptor) tmp;
 				PowerReceiver test = receptor.getPowerReceiver(direction);
-				double testamount = 1.0;
+				double testamount = 450.0;
+				Type tempType = PowerHandler.Type.ENGINE;
 				
-				test.receiveEnergy(null, testamount, direction );
+				
+				
+				test.receiveEnergy(tempType, testamount, direction);
+				
+				
+				// TODO Can't tell if we need this or not:
+				test.update();
 				
 			}
 		}
