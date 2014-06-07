@@ -55,9 +55,6 @@ public class TestFloodGate extends DamPart implements ITileEntityProvider {
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metaData) {
-		if (!world.isRemote) { // No need clientside, or?
-			return new TileDamFloodGate();
-		}
-		return null;
+		return new TileDamFloodGate();
 	}
 }

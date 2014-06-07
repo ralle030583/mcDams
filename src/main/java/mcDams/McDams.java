@@ -68,7 +68,7 @@ public class McDams {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		
-		this.properties = readProperties();
+		McDams.properties = McDams.readProperties();
 		
 		// System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
 
@@ -107,7 +107,7 @@ public class McDams {
 		return properties.get(key);
 	}
 	
-	private Properties readProperties() {
+	private static Properties readProperties() {
 		// TODO Later from file
 		Properties props = new Properties();
 		
