@@ -6,8 +6,11 @@ import mcDams.tileEntities.basic.TileDamPart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import buildcraft.api.power.IPowerEmitter;
+import buildcraft.api.power.IPowerReceptor;
+import buildcraft.api.power.PowerHandler.PowerReceiver;
 
 public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPowerEmitter{
 
@@ -42,9 +45,7 @@ public class TileDamTurbine extends TileDamPart implements ISidedInventory, IPow
 		}
 		
 		
-	
-	
-	
+
 	
 	
 
@@ -208,6 +209,7 @@ public void updateEntity(){
 			if(this.getStackInSlot(0) != null){
 			generatePower();
 			DeteriorateRotor(1);
+			
 			}
 			
 		}
@@ -254,8 +256,20 @@ private void updateDamStatus(){
 
 	
 	private void generatePower() {
-	
-		
+		TileEntity tmp = null;
+
+		for (ForgeDirection direction : ForgeDirection.VALID_DIRECTIONS) {
+			if ((tmp = getEntityFromDirection(this.worldObj, this.xCoord, this.yCoord, this.zCoord, direction)) instanceof IPowerReceptor){
+			
+				IPowerReceptor receptor;
+				PowerReceiver test = receptor.getPowerReceiver(direction);
+				double testamount = 1.0;
+				
+				test.receiveEnergy(null, testamount, direction );
+				
+			}
+		}
+
 	}
 	
 	
